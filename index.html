@@ -5,11 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="quote-container" id="quote-container">
+        <!-- Quote -->
+        <div class="quote-text">
+            <!-- Icon -->
+            <i class="fas fa-quote-left"></i>
+            <span id="quote">Two things are infinite: the universe and human stupidity, and I&apos;m not sure about the universe.</span>
+        </div>
+        <!-- Author -->
+        <div id="quote-author">
+            <span id="author">Albert Einstein</span>
+        </div>
+        <!-- Buttens -->
+        <div class="buttens-container">
+            <button class="twitter-butten" id="twitter-butten">
+                <i class="fab fa-twitter" title="Tweet this"></i>
+            </button>
+            <button class="next-quote" id="next-quote">
+                New Quote
+            </button>
+        </div>
+    </div>
     <!-- Script -->
     <script src="script.js"></script>
 </body>
