@@ -3,21 +3,28 @@ const quotetext = document.getElementById("quote");
 const authorText = document.getElementById("author");
 const twitterBtn = document.getElementById("twitter-butten");
 const nextQuote = document.getElementById("next-quote");
+const loader = document.getElementById("loader");
 
 let apiQuote = [];
 
+// Show loading prossec
+function loading(){
+    loader.hidden = false;
+    quoteContainer.hidden = true;
+}
+
+// hide loader
+
+function hideLoader(){
+    quoteContainer.hidden = false;
+    loader.hidden = true;
+}
+
 // Show random quote
 function newQuote(){
+    loading();
     const quote = apiQuote[Math.floor(Math.random()*apiQuote.length)];
     console.log(quote);
-
-    // Check quote length
-    if(quote.text.length > 50){
-        quotetext.classList.add("long-quote");
-    }else{
-        quotetext.classList.remove("long-quote");
-    }
-    quotetext.textContent = quote.text;
 
     if(quote.author == null)
     {
@@ -26,7 +33,14 @@ function newQuote(){
         authorText.textContent  = quote.author;
     }
 
-    
+    // Check quote length
+    if(quote.text.length > 50){
+        quotetext.classList.add("long-quote");
+    }else{
+        quotetext.classList.remove("long-quote");
+    }
+    quotetext.textContent = quote.text;
+    hideLoader();   
 }
 
 // Get quote frome API 
